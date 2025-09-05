@@ -1,0 +1,30 @@
+namespace: sunmarsh
+labels:
+  app: ghee-app
+replicas: 2
+
+# container
+name: cont-1
+image:
+  repository: sunmarsh/organic-ghee
+  tag: latest
+
+containerPort: 5656
+
+# service
+service:
+  type: LoadBalancer
+  port: 5656
+  targetPort: 5656
+
+# mongodb
+mongodb:
+  labels:
+    app: mongodb
+  replicaCount: 1
+  name: mongodb
+  image:
+    repository: mongo
+    tag: latest
+  containerPort: 27017
+  type: ClusterIP
