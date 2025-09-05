@@ -4,7 +4,7 @@ labels:
 replicas: 2
 
 # container
-name: cont-1
+name: c-1
 image:
   repository: sunmarsh/organic-ghee
   tag: latest
